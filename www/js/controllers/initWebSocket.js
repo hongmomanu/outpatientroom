@@ -36,7 +36,6 @@ angular.module('app.controllers')
 
                     $timeout(function(){
                         if(res.type=="callpatient"){
-                            console.log(res);
 
                             for(var i=0;i<$scope.data.length;i++){
                                 if($scope.data[i].flag=="1"){
@@ -46,14 +45,10 @@ angular.module('app.controllers')
                             }
                             $timeout(function(){
                                 $scope.data=res.data;
-                            },100);
+                            },0);
 
-                            //$scope.data=res.data;
-                            /*for(var i=0;i<res.data.length;i++){
-                                $scope["data"+(i+1)]=res.data[i];
-                            }*/
+
                         }else if(res.type=="doctorlogin"){
-                            console.log(res);
                             for(var i=0;i<res.data.length;i++){
                                 $scope.doctorinfo=res.data[i];
 
