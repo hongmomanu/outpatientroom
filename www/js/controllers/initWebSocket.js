@@ -33,16 +33,16 @@ angular.module('app.controllers')
                 socket.onmessage = function(event) {
                     var res=JSON.parse(event.data);
 
-                    console.log(res);
 
-                    /*$timeout(function(){
-                        if(res.type=="bigscreendata"){
-                            for(var i=0;i<res.data.length;i++){
+                    $timeout(function(){
+                        if(res.type=="callpatient"){
+                            console.log(res);
+                            /*for(var i=0;i<res.data.length;i++){
                                 $scope["data"+(i+1)]=res.data[i];
-                            }
+                            }*/
                         }
                     },0);
-*/
+
                 };
                 socket.onclose = function(event) {
                     $timeout(function(){
