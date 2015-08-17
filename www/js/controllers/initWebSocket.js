@@ -37,9 +37,34 @@ angular.module('app.controllers')
                     $timeout(function(){
                         if(res.type=="callpatient"){
                             console.log(res);
+
+                            for(var i=0;i<$scope.data.length;i++){
+                                if($scope.data[i].flag=="1"){
+                                    $scope.data[i].flag="2";
+
+                                }
+                            }
+                            $timeout(function(){
+                                $scope.data=res.data;
+                            },100);
+
+                            //$scope.data=res.data;
                             /*for(var i=0;i<res.data.length;i++){
                                 $scope["data"+(i+1)]=res.data[i];
                             }*/
+                        }else if(res.type=="doctorlogin"){
+                            console.log(res);
+                            for(var i=0;i<res.data.length;i++){
+                                $scope.doctorinfo=res.data[i];
+
+                            }
+
+                        }else if(res.type=="changeroom"){
+                            $scope.configdata.roomnum=res.data.newno;
+                            $scope.configdata.roomname=res.data.newname;
+                            localStorage.configdata=JSON.stringify($scope.configdata);
+                            window.location.reload();
+
                         }
                     },0);
 

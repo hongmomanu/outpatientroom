@@ -41,17 +41,30 @@
       <ion-content>
         <div class="row">
           <div class="col  mygrid col-33">
-            <button class="button myButton">{{data1.title}}</button>
-            <div >
+            <button class="button myButton">候诊病人</button>
+            <div>
+              <ion-list class="myList">
+                <ion-item ng-repeat="item in data"  item="item" class=" item ng-binding ng-animate {{item.flag==1?'flash1':'listitem'}} ng-enter ng-enter-active" ng-class="{{item.flag==1?'\'flash1\'':'\'listitem\''}}">
+                  {{item.name}}
+                </ion-item>
+              </ion-list>
 
             </div>
 
           </div>
           <div class="col  mygrid">
-            <button class="button myButton">{{data2.title}}</button>
-            <div >
+            <button class="button myButton">医生简介</button>
 
+              <div style="text-align: center;vertical-align: middle;padding: 20px;">
+                <div style="margin:0 auto" class="circletagnew">
+                  <img width="128px;" height="128px;" src="{{doctorinfo.img}}">
+                </div>
+
+              </div>
+            <div style="text-align: left;font-size: xx-large;line-height: normal;">
+              {{doctorinfo.info}}
             </div>
+
           </div>
 
         </div>

@@ -17,6 +17,7 @@
 .myList{
     width: 100%;
     height: 100%;
+    line-height: 100px;
     background-color :lightskyblue;
 
 }
@@ -54,6 +55,35 @@
 .listitem {
     background-color :lightskyblue;
     font-size: xx-large;
+    text-decoration:blink;
+}
+.flashitem {
+    background-color :red;
+    font-size: xx-large;
+    text-decoration:blink;
+}
+
+@-webkit-keyframes flash1 {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity:1 ;
+        color: red;
+    }
+}
+
+.flash1{
+    position: relative;
+    /*top: 10px;
+    left: 10px;
+    width: 200px;*/
+    background-color :lightskyblue;
+    font-size: xx-large;
+
+    color: #0000ff;
+    -webkit-animation:flash1 3s infinite  ease-in-out ;
 }
 
 .row{
@@ -62,4 +92,16 @@
     -webkit-flex: 0 1 100% !important;
     -ms-flex: 0 1 100% !important;
     flex: 0 1 100% !important;
+}
+.circletagnew {
+    display: block;
+
+    width: 128px;
+    height: 128px;
+    background: #E6E7ED;
+    -moz-border-radius: 64px;
+    -webkit-border-radius: 64px;
+    /*background-image: url(../icons/user.png);*/
+    background-position:50% 50%;
+    background-repeat:no-repeat;
 }

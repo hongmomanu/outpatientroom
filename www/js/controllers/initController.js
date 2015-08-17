@@ -4,6 +4,7 @@
 angular.module('app.controllers')
     .controller('initController', function($scope, $interval,$timeout, $ionicModal,$rootScope) {
         $scope.socket=null;
+        $scope.data=[];
         $scope.configdata=localStorage.configdata?JSON.parse(localStorage.configdata):{};
 
         console.log('initController');
