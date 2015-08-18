@@ -40,7 +40,7 @@ angular.module('app.controllers')
                             for(var i=0;i<$scope.data.length;i++){
                                 if($scope.data[i].flag=="1"){
                                     $scope.data[i].flag="2";
-
+                                    break;
                                 }
                             }
                             $timeout(function(){
