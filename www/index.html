@@ -44,8 +44,8 @@
             <button class="button myButton">候诊病人</button>
             <div>
               <ion-list class="myList">
-                <ion-item ng-repeat="item in data"  item="item" class=" item ng-binding ng-animate {{item.flag==1?'flash1':'listitem'}} ng-enter ng-enter-active" ng-class="{{item.flag==1?'\'flash1\'':'\'listitem\''}}">
-                  {{item.name}}
+                <ion-item ng-repeat="item in data"  item="item" class=" item ng-binding ng-animate {{item.status==4?'flash1':'listitem'}} ng-enter ng-enter-active" ng-class="{{item.status==4?'\'flash1\'':'\'listitem\''}}">
+                  {{item.hzxh}} {{item.hzxm}}
                 </ion-item>
               </ion-list>
 

@@ -11,6 +11,20 @@ angular.module('app.controllers')
             //$scope.configmodal.show();
             var socket=null;
 
+
+            var removeListItem=function(hzxh){
+                for(var i=0;i<$scope.data.length;i++){
+                    if($scope.data[i].hzxh==hzxh){
+                        $scope.data[i].status="3";
+                        $timeout(function(){
+                            $scope.data.splice(i,1);
+                        },0)
+
+                        break;
+                    }
+                }
+            };
+
             var websocketInit=function(){
                 var url=$scope.configdata.serverurl;
                 var roomnum=$scope.configdata.roomnum;
@@ -32,19 +46,29 @@ angular.module('app.controllers')
                 socket = new WebSocket(url);
                 socket.onmessage = function(event) {
                     var res=JSON.parse(event.data);
-
-
                     $timeout(function(){
                         if(res.type=="callpatient"){
-
-                            for(var i=0;i<$scope.data.length;i++){
-                                if($scope.data[i].flag=="1"){
-                                    $scope.data[i].flag="2";
-                                    break;
-                                }
-                            }
+                            /**/
                             $timeout(function(){
-                                $scope.data=res.data;
+                                for(var i=0;i<res.data.length;i++){
+                                    if(res.data[i].status=='4'){
+                                        removeListItem(res.data[i].hzxh);
+                                        (function(item){
+                                            $timeout(function(){
+                                                $scope.data.splice(0, 0, item);
+                                            },30);
+                                        })(res.data[i]);
+
+                                        //$scope.data[0]=res.data[i];
+                                    }else if(res.data[i].status=='2'||res.data[i].status=='6'){
+                                        //$scope.data.push(res.data[i]);
+                                        removeListItem(res.data[i].hzxh);
+
+                                    }else if(res.data[i].status=='3'){
+                                        $scope.data.push(res.data[i]);
+                                    }
+                                }
+                                //$scope.data=res.data;
                             },0);
 
 
