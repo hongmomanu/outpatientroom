@@ -105,3 +105,11 @@
     background-position:50% 50%;
     background-repeat:no-repeat;
 }
+.marquee {
+    white-space: nowrap;
+    overflow:-webkit-marquee;
+    -webkit-marquee-direction:left;
+    -webkit-marquee-speed:normal;
+    -webkit-marquee-style:scroll;
+    -webkit-marquee-repetition:1;
+}

@@ -18,7 +18,7 @@ angular.module('app.controllers')
                         $scope.data[i].status="3";
                         $timeout(function(){
                             $scope.data.splice(i,1);
-                        },0)
+                        },0);
 
                         break;
                     }
