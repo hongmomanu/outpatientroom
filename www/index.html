@@ -56,10 +56,13 @@
             <button class="button myButton">医生简介</button>
 
               <div style="text-align: center;vertical-align: middle;padding: 20px;">
-                <div style="margin:0 auto" class="circletagnew">
-                  <img width="128px;" height="128px;" src="{{doctorinfo.img}}">
+                <div style="margin:0 auto;padding-top: 15px;" class="circletagnew">
+                  <img   width="100px;" height="150px;" src="{{doctorinfo.img}}">
                 </div>
 
+                <div class="infocontent">{{doctorinfo.name}},{{doctorinfo.sex}}</div>
+                <div class="infocontent">{{doctorinfo.title}} {{doctorinfo.subjects}}</div>
+                <div class="infocontent">{{doctorinfo.cv}} </div>
               </div>
             <div style="text-align: left;font-size: xx-large;line-height: normal;">
               {{doctorinfo.info}}

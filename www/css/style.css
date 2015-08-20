@@ -96,11 +96,11 @@
 .circletagnew {
     display: block;
 
-    width: 128px;
-    height: 128px;
-    background: #E6E7ED;
-    -moz-border-radius: 64px;
-    -webkit-border-radius: 64px;
+    width: 180px;
+    height: 180px;
+    background: darkgreen;
+    -moz-border-radius: 90px;
+    -webkit-border-radius: 90px;
     /*background-image: url(../icons/user.png);*/
     background-position:50% 50%;
     background-repeat:no-repeat;
@@ -112,4 +112,9 @@
     -webkit-marquee-speed:normal;
     -webkit-marquee-style:scroll;
     -webkit-marquee-repetition:1;
+}
+.infocontent{
+    line-height: normal;
+    font-size: xx-large;
+
 }
