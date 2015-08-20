@@ -1,16 +1,7 @@
-body {
-    font-size: 62.5%;
-    margin: 1em;
-    background: #232425;
-}
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-#watch {
-    /*font-size: 1em;*/
 
+#watch {
+    font-size: 0.75em;
+     top: -10px;
     text-align: right;
     position: relative;
     /*margin: 10em 0;*/

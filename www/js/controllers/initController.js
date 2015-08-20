@@ -1,6 +1,7 @@
 /**
  * Created by jack on 15-8-14.
  */
+var remoteloaded=true;
 angular.module('app.controllers')
     .controller('initController', function($scope, $interval,$timeout, $ionicModal,$rootScope) {
         $scope.socket=null;
