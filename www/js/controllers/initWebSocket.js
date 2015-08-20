@@ -4,7 +4,7 @@
 angular.module('app.controllers')
     .run(function($rootScope,$timeout){
         //var hello = testFactory.Hello();
-        console.log("hello");
+        //console.log("hello");
         //console.log($rootScope);
 
         $rootScope.$on('initWebSocket', function (event, $scope) {
@@ -26,6 +26,9 @@ angular.module('app.controllers')
             };
 
             var websocketInit=function(){
+
+                if(!$scope.configdata.serverurl)$scope.configdata.serverurl=localStorage.serverurl;
+
                 var url=$scope.configdata.serverurl;
                 var roomnum=$scope.configdata.roomnum;
                 if(!url||url==""){
@@ -33,6 +36,7 @@ angular.module('app.controllers')
                     $scope.configmodal.show();
                     return ;
                 }
+
                 if(!roomnum||roomnum==""){
                     //Ext.Msg.alert('提示','诊区为空');
                     $scope.configmodal.show();

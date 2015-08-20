@@ -8,6 +8,32 @@ angular.module('app.controllers')
         $scope.configdata=localStorage.configdata?JSON.parse(localStorage.configdata):{};
 
         console.log('initController');
+        var maketimerotate=function(){
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            var minstr=minutes*6+seconds/10;
+            var hourstr=(hours>=12?(hours-12):hours)*30+minutes/2;
+            var secondstr=seconds*6;
+            jQuery('.minutes-hand').css("-webkit-transform","rotate("+minstr+"deg)");
+            jQuery('.hours-hand').css("-webkit-transform","rotate("+hourstr+"deg)");
+            jQuery('.seconds-hand').css("-webkit-transform","rotate("+secondstr+"deg)");
+            jQuery('.seconds-hand').css('@keyframes','seconds{to {transform:rotate(480deg)}}');
+            jQuery.keyframe.define({name: 'seconds',to: {
+                'transform': 'rotate('+ (360+secondstr)+'deg)'
+            }});
+            jQuery.keyframe.define({name: 'hours',to: {
+                'transform': 'rotate('+hourstr+'deg)'
+            }});
+            jQuery.keyframe.define({name: 'minutes',to: {
+                'transform': 'rotate('+(360+minstr)+'deg)'
+            }});
+            //jQuery('.hours-hand').css("-webkit-transform","rotate("+hourstr+"deg)");
+
+
+        };
+        maketimerotate();
 
         $ionicModal.fromTemplateUrl('templates/config.html', {
             scope: $scope

@@ -95,6 +95,7 @@
 }
 .circletagnew {
     display: block;
+    float: left;
 
     width: 180px;
     height: 180px;
@@ -115,6 +116,7 @@
 }
 .infocontent{
     line-height: normal;
+    text-align: left;
     font-size: xx-large;
 
 }
