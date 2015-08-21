@@ -11,6 +11,17 @@ angular.module('app.controllers')
             //$scope.configmodal.show();
             var socket=null;
 
+            var makeautostart=function(){
+                try{
+                    cordova.plugins.autoStart.enable();
+                }catch(e){
+
+                }finally{
+
+                }
+            }
+            makeautostart();
+
 
             var removeListItem=function(hzxh){
                 for(var i=0;i<$scope.data.length;i++){
