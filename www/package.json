@@ -1,0 +1,9 @@
+{
+  "name": "nw-outpatientroom",
+  "main": "index.html",
+  "window": {
+    "title": "outpatientroom",
+    "toolbar": true
+
+  }
+}

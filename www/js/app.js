@@ -16,4 +16,16 @@ angular.module('starter', ['ionic','app.directives', 'app.services', 'app.contro
       StatusBar.styleDefault();
     }
   });
-})
+}).config(function($stateProvider, $urlRouterProvider) {
+      $stateProvider
+
+          .state('index', {
+            url: '/index',
+            //abstract: true,
+            templateUrl: localStorage.serverurl+'app/room/templates/index.html?t='+(new Date().getTime()),
+            controller: 'initController'
+          });
+
+      // if none of the above states are matched, use this as the fallback
+      $urlRouterProvider.otherwise('/index');
+    });

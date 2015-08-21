@@ -36,6 +36,17 @@ angular.module('app.controllers')
                 }
             };
 
+            var claerscreen=function(){
+
+                for(var i=0;i<$scope.data.length;i++){
+                    $scope.data[i].status="3";
+                }
+
+                $timeout(function(){
+                    $scope.data=[];
+                },50);
+            }
+
             var websocketInit=function(){
 
                 if(!$scope.configdata.serverurl)$scope.configdata.serverurl=localStorage.serverurl;
@@ -101,6 +112,9 @@ angular.module('app.controllers')
 
                         }else if(res.type=='freshsystem'){
                             window.location.href="";
+                        }else if (res.type=='clearscreen'){
+
+                            claerscreen();
                         }
                     },0);
 

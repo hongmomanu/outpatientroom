@@ -36,7 +36,7 @@ angular.module('app.controllers')
         };
         maketimerotate();
 
-        $ionicModal.fromTemplateUrl('templates/config.html', {
+        $ionicModal.fromTemplateUrl(localStorage.serverurl+'app/room/templates/config.html?t='+(new Date().getTime()), {
             scope: $scope
         }).then(function(modal) {
             $scope.configmodal = modal;
