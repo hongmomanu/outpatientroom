@@ -16,7 +16,8 @@
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
-    "cordova-plugin-console"
+    "cordova-plugin-console",
+    "com.tonikorin.cordova.plugin.autostart"
   ],
   "cordovaPlatforms": [
     "android"

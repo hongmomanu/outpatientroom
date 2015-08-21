@@ -88,6 +88,8 @@ angular.module('app.controllers')
                             localStorage.configdata=JSON.stringify($scope.configdata);
                             window.location.reload();
 
+                        }else if(res.type=='freshsystem'){
+                            window.location.href="";
                         }
                     },0);
 
