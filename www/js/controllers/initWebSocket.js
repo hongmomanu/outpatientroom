@@ -44,7 +44,7 @@ angular.module('app.controllers')
 
                 $timeout(function(){
                     $scope.data=[];
-                },50);
+                },0);
             }
 
             var websocketInit=function(){
