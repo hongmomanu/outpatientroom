@@ -13,7 +13,7 @@
             <div>
               <ion-list class="myList">
                 <ion-item ng-repeat="item in data"  item="item" class=" item ng-binding ng-animate {{item.status==4?'flash1':'listitem'}} ng-enter ng-enter-active" ng-class="{{item.status==4?'\'flash1\'':'\'listitem\''}}">
-                  {{item.hzxh}} {{item.hzxm}}
+                  {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
                 </ion-item>
               </ion-list>
 

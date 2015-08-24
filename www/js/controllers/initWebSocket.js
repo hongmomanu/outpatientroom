@@ -49,7 +49,8 @@ angular.module('app.controllers')
 
             var websocketInit=function(){
 
-                if(!$scope.configdata.serverurl)$scope.configdata.serverurl=localStorage.serverurl;
+                //if(!$scope.configdata.serverurl)$scope.configdata.serverurl=localStorage.serverurl;
+                $scope.configdata.serverurl=localStorage.serverurl;
 
                 var url=$scope.configdata.serverurl;
                 var roomnum=$scope.configdata.roomnum;

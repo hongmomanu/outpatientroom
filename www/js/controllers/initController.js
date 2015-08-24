@@ -7,6 +7,7 @@ angular.module('app.controllers')
         $scope.socket=null;
         $scope.data=[];
         $scope.configdata=localStorage.configdata?JSON.parse(localStorage.configdata):{};
+        if (!localStorage.showlines)localStorage.showlines = 5;
 
         console.log('initController');
         var maketimerotate=function(){
@@ -47,6 +48,7 @@ angular.module('app.controllers')
         //make config
         $scope.makeConfig=function(configdata){
             localStorage.configdata=JSON.stringify(configdata);
+            localStorage.serverurl=configdata.serverurl;
             $scope.configmodal.hide();
             window.location.reload();
 
