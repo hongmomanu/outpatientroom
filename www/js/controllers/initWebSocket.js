@@ -45,7 +45,18 @@ angular.module('app.controllers')
                 $timeout(function(){
                     $scope.data=[];
                 },0);
-            }
+            };
+            var iscalled=function(item){
+                var result=false;
+                for(var i=0;i<$scope.data.length;i++){
+                    if($scope.data[i].hzxh==item.hzxh){
+                        result=true;
+                        break;
+                    }
+                }
+                return result;
+
+            };
 
             var websocketInit=function(){
 
@@ -92,7 +103,7 @@ angular.module('app.controllers')
                                         removeListItem(res.data[i].hzxh);
 
                                     }else if(res.data[i].status=='3'){
-                                        $scope.data.push(res.data[i]);
+                                        if(!(iscalled(res.data[i])))$scope.data.push(res.data[i]);
                                     }
                                 }
                                 //$scope.data=res.data;
