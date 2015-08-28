@@ -117,10 +117,17 @@ angular.module('app.controllers')
                             }
 
                         }else if(res.type=="changeroom"){
-                            $scope.configdata.roomnum=res.data.newno;
-                            $scope.configdata.roomname=res.data.newname;
-                            localStorage.configdata=JSON.stringify($scope.configdata);
-                            window.location.reload();
+                            if($scope.configdata.roomnum==res.data.newno){
+                                $scope.configdata.roomname=res.data.newname;
+                                localStorage.configdata=JSON.stringify($scope.configdata);
+
+                            }else{
+                                $scope.configdata.roomnum=res.data.newno;
+                                $scope.configdata.roomname=res.data.newname;
+                                localStorage.configdata=JSON.stringify($scope.configdata);
+                                window.location.reload();
+                            }
+
 
                         }else if(res.type=='freshsystem'){
                             window.location.href="";

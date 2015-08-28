@@ -26,3 +26,4 @@ Issues have been disabled on this repo, if you do find an issue or have a questi
 
 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore platforms/android/build/outputs/apk/outpatientRoom.keystore platforms/android/build/outputs/apk/android-armv7-release-unsigned.apk outpatientRoom
+123456
