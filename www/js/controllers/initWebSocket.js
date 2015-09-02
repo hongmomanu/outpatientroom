@@ -134,6 +134,14 @@ angular.module('app.controllers')
                         }else if (res.type=='clearscreen'){
 
                             claerscreen();
+                        }else if(res.type=='servertime'){
+                            //$scope.servertime=res.time;
+                            /*console.log(res);
+                            $rootScope.$broadcast('fireservertime', $scope,res);*/
+                            $scope.servertime=(new Date(res.time)).getTime()-(new Date()).getTime();
+                            console.log($scope.servertime);
+                            $scope.maketimerotate();
+
                         }
                     },0);
 
