@@ -7,11 +7,11 @@
 
 .myButton {
     background-color:#CCFFFF ;
-    font-size: xx-large;
+    font-size: 50px;
     color: darkslateblue;
     font-weight: bold;
     width: 100%;
-    height: 100%;
+    height: 60px;
 }
 .myTitle{
     font-size: xx-large !important;
@@ -58,13 +58,13 @@
 .listitem {
     background-color :lightskyblue;
     /*font-size: xx-large;*/
-    font-size: 50px;
+    font-size: 60px;
     text-decoration:blink;
 }
 .flashitem {
     background-color :red;
     /*font-size: xx-large;*/
-    font-size: 50px;
+    font-size: 60px;
     text-decoration:blink;
 }
 
@@ -86,7 +86,7 @@
     width: 200px;*/
     background-color :lightskyblue;
     /*font-size: xx-large;*/
-    font-size: 50px;
+    font-size: 60px;
 
     color: #0000ff;
     -webkit-animation:flash1 3s infinite  ease-in-out ;
