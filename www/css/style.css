@@ -14,7 +14,9 @@
     height: 60px;
 }
 .myTitle{
-    font-size: xx-large !important;
+    /*font-size: xx-large !important;*/
+    line-height: 60px;
+    font-size: 50px !important;
 
 }
 .myList{
@@ -58,13 +60,15 @@
 .listitem {
     background-color :lightskyblue;
     /*font-size: xx-large;*/
-    font-size: 60px;
+    font-size: 80px;
+    line-height: 1.4em
     text-decoration:blink;
 }
 .flashitem {
     background-color :red;
     /*font-size: xx-large;*/
-    font-size: 60px;
+    font-size: 80px;
+    line-height: 1.4em
     text-decoration:blink;
 }
 
@@ -86,7 +90,9 @@
     width: 200px;*/
     background-color :lightskyblue;
     /*font-size: xx-large;*/
-    font-size: 60px;
+    font-size: 80px;
+    /*line-height: normal;*/
+    line-height: 1.4em
 
     color: #0000ff;
     -webkit-animation:flash1 3s infinite  ease-in-out ;
@@ -133,4 +139,25 @@
     text-align:center;
     font-size: xx-large;
 
+}
+.has-header {
+    top: 60px;
+
+}
+.bar {
+    height: 60px;
+
+}
+.bar-header .title {
+   /* margin-top: 10px;*/
+    height: 60px;
+    line-height: 60px;
+}
+.col-45{
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 45%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 45%;
+    -ms-flex: 0 0 45%;
+    flex: 0 0 45%;
 }

@@ -23,9 +23,9 @@ angular.module('app.controllers')
             makeautostart();
 
 
-            var removeListItem=function(hzxh){
+            var removeListItem=function(id){
                 for(var i=0;i<$scope.data.length;i++){
-                    if($scope.data[i].hzxh==hzxh){
+                    if($scope.data[i].id==id){
                         $scope.data[i].status="3";
                         $timeout(function(){
                             $scope.data.splice(i,1);
@@ -49,7 +49,7 @@ angular.module('app.controllers')
             var iscalled=function(item){
                 var result=false;
                 for(var i=0;i<$scope.data.length;i++){
-                    if($scope.data[i].hzxh==item.hzxh){
+                    if($scope.data[i].id==item.id){
                         result=true;
                         break;
                     }
@@ -90,17 +90,17 @@ angular.module('app.controllers')
                             $timeout(function(){
                                 for(var i=0;i<res.data.length;i++){
                                     if(res.data[i].status=='4'){
-                                        removeListItem(res.data[i].hzxh);
+                                        removeListItem(res.data[i].id);
                                         (function(item){
                                             $timeout(function(){
                                                 $scope.data.splice(0, 0, item);
-                                            },30);
+                                            },0);
                                         })(res.data[i]);
 
                                         //$scope.data[0]=res.data[i];
                                     }else if(res.data[i].status=='2'||res.data[i].status=='6'){
                                         //$scope.data.push(res.data[i]);
-                                        removeListItem(res.data[i].hzxh);
+                                        removeListItem(res.data[i].id);
 
                                     }else if(res.data[i].status=='3'){
                                         if(!(iscalled(res.data[i])))$scope.data.push(res.data[i]);

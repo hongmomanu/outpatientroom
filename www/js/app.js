@@ -22,8 +22,8 @@ angular.module('starter', ['ionic','app.directives', 'app.services', 'app.contro
           .state('index', {
             url: '/index',
             //abstract: true,
-            templateUrl: localStorage.serverurl+'app/room/templates/index.html?t='+(new Date().getTime()),
-              //templateUrl: 'templates/index.html',
+            //templateUrl: localStorage.serverurl+'app/room/templates/index.html?t='+(new Date().getTime()),
+              templateUrl: 'templates/index.html',
             controller: 'initController'
           });
 
